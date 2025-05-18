@@ -20,6 +20,54 @@ This trading bot provides a strong foundation for developing, testing, and scali
 
 ---
 
+## Setup Instructions
+
+1. **Clone the repository:**
+
+    ```bash
+    git clone https://github.com/alanvinuv/tradingbot.git
+    ```
+
+2. **Set up the Python environment:**
+
+    ```bash
+    python -m venv venv
+    # On Windows:
+    venv\Scripts\activate       
+    # On Linux or macOS:    source venv/bin/activate
+    pip install -r requirements.txt
+    ```
+
+3. **Configure your environment variables:**
+
+    - Copy `.env.example` to `.env`:
+
+        ```bash
+        # On Windows:
+        copy .env.example .env
+        # On Linux or macOS:    cp .env.example .env
+        ```
+    - Fill in your Alpaca API credentials in the `.env` file:
+      ```
+      APCA_API_KEY= "your_key_here"
+      APCA_API_SECRET= "your_secret_here"
+      APCA_BASE_URL = "base_url"
+      ```
+
+4. **Run the trading bot:**
+
+    ```bash
+    python trading_bot_multistock.py
+    ```
+
+    - Backtesting results and trade logs are saved in the `/outputs` folder of the project directory.
+    - See inline comments in the code for configuration options.
+
+> **Tip:**  
+> You can also run the single-stock version using `python trading_bot.py`
+
+---
+
 ## Project Structure
 
 ```markdown 
@@ -98,9 +146,6 @@ Copy or rename this file to `.env` and fill in your own credentials.
 - `README.md` –  Main project documentation. Includes setup instructions, usage examples, folder structure, and an overview of the project.
 
 - `requirements.txt` –  List of all Python dependencies required to run the project. Use this to install all dependencies.
-    ```bash
-    pip install -r requirements.txt
-    ```
 
 - `trading_bot.py` –  The main script for running the **single-stock trading bot**. Supports trading and backtesting on a single ticker using ML-based predictions and sentiment analysis.
 
@@ -139,54 +184,6 @@ Copy or rename this file to `.env` and fill in your own credentials.
 - **statsmodels** : Library for statistical modeling and time series analysis. Used here for ARIMAX forecasting model. Used in advanced model experimentation.
 
 - **prophet** : Facebook’s open-source tool for forecasting time series data. Used in advanced model experimentation.
-
-
----
-## Setup Instructions
-
-1. **Clone the repository:**
-
-    ```bash
-    git clone https://github.com/alanvinuv/tradingbot.git
-    ```
-
-2. **Set up the Python environment:**
-
-    ```bash
-    python -m venv venv
-    # On Windows:
-    venv\Scripts\activate       
-    # On Linux or macOS:    source venv/bin/activate
-    pip install -r requirements.txt
-    ```
-
-3. **Configure your environment variables:**
-
-    - Copy `.env.example` to `.env`:
-
-        ```bash
-        # On Windows:
-        copy .env.example .env
-        # On Linux or macOS:    cp .env.example .env
-        ```
-    - Fill in your Alpaca API credentials in the `.env` file:
-      ```
-      APCA_API_KEY= "your_key_here"
-      APCA_API_SECRET= "your_secret_here"
-      APCA_BASE_URL = "base_url"
-      ```
-
-4. **Run the trading bot:**
-
-    ```bash
-    python trading_bot_multistock.py
-    ```
-
-    - Backtesting results and trade logs are saved in the `/outputs` folder of the project directory.
-    - See inline comments in the code for configuration options.
-
-> **Tip:**  
-> You can also run the single-stock version using `python trading_bot.py`
 
 ---
 
@@ -289,6 +286,7 @@ Copy or rename this file to `.env` and fill in your own credentials.
 > Notes: 
 > - **No live trading is enabled by default**. Live and paper trading can be enabled by switching broker configuration, but this **has not yet been tested in this version**. The bot currently runs in backtesting mode by default, but you can easily enable live or paper trading.
 
+---
 
 ## Backtesting
 
