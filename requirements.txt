@@ -1,0 +1,12 @@
+lumibot
+python-dotenv
+yfinance
+alpaca-py
+joblib
+ta
+scikit-learn
+transformers
+torch
+pandas
+numpy
+
