@@ -23,7 +23,7 @@ load_dotenv()
 ALPACA_CREDS = {
     "API_KEY": os.getenv('APCA_API_KEY'),
     "API_SECRET": os.getenv('APCA_API_SECRET'),
-    "Paper": True
+    "Paper": True                      # For Paper/Live trading set to False
 }
 
 # Trade log (will export as .csv at end)
@@ -353,3 +353,16 @@ if __name__ == "__main__":
         print("✅ Trade ledger saved to trade_ledger.csv")
     except AttributeError as e:
         print(f"⚠️ Trade log not found: {e}")
+
+# For Paper/Live Trading replace the last main code with this one
+# if __name__ == "__main__":
+#     symbols = ["AAPL", "MSFT", "TSLA", "NVDA", "AMZN", "GOOGL", "META", "SPY"]
+#     broker = Alpaca(ALPACA_CREDS)
+#     strategy = MLTrader(
+#         name='ml_multi',
+#         broker=broker,
+#         parameters={"symbols": symbols, "cash_at_risk": 0.5}
+#     )
+#     trader = Trader()
+#     trader.add_strategy(strategy)
+#     trader.run_all()

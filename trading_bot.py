@@ -28,7 +28,7 @@ load_dotenv()       # Load environment variables from .env (API keys, etc.)
 ALPACA_CREDS={
     "API_KEY" : os.getenv('APCA_API_KEY'),
     "API_SECRET" : os.getenv('APCA_API_SECRET'),
-    "Paper" : True
+    "Paper" : True                  # For Paper/Live trading set to False
 }
 
 class MLTrader(Strategy):       
@@ -247,4 +247,15 @@ if __name__ == "__main__":
     )
 
 
+# For Paper/Live Trading replace the last main code with this one
+# if __name__ == "__main__":
+#     broker = Alpaca(ALPACA_CREDS)
+#     strategy = MLTrader(
+#         name='mlstrat', broker=broker,
+#         parameters={"symbol": "SPY", "cash_at_risk": 0.5}
+#     )
 
+#     # Start live or paper trading (not backtest)
+#     trader = Trader()
+#     trader.add_strategy(strategy)
+#     trader.run_all()

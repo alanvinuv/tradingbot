@@ -234,14 +234,16 @@ Copy or rename this file to `.env` and fill in your own credentials.
       +--------------+--------------+
                      |
                      v
-      +-----------------------------+
-      |  Feature Engineering Layer  |
-      | (OHLCV + Technical Indics.) |
-      +--------------+--------------+
-                     |
-                     |------------|
-                                  |
-                                  v
+        +------------+------------------+
+        |                               |
+        |                +-----------------------------+
+        |                |  Feature Engineering Layer  |
+        |                | (OHLCV + Technical Indics.) |
+        |                +--------------+--------------+
+        |                               |
+        |                               |
+        |                               |
+        |                               v
 +---------------------+    +---------------------+
 | Alpaca News Client  |    |   Price Prediction  |
 +---------+-----------+    |      (ML Model)     |
@@ -281,7 +283,7 @@ The trading bot framework is extensively tested via backtesting using LumiBot an
 
 > ## Outputs
 >
-> ### 1. Single Stock
+> ### 1. Single Stock Backtesting (trading_bot.py)
 >
 > ![Backtesting Report Screenshot](outputs/single_stock/trade_chart_screenshot.png)
 >
@@ -289,7 +291,7 @@ The trading bot framework is extensively tested via backtesting using LumiBot an
 >
 > ---
 >
-> ### 2. Multi-Stock
+> ### 2. Multi-Stock Backtesting (trading_bot_multistock.py)
 >
 > ![Backtesting Report Screenshot](outputs/multi_stock/trade_chart_screenshot.png)
 >
@@ -301,7 +303,7 @@ The trading bot framework is extensively tested via backtesting using LumiBot an
 >
 > - View performance plots in `trade_charts.html`.
 > - Open `tearsheet.html` in your browser for an interactive summary.
-> - For multi-stock runs, examine `trade_ledger.csv` in Excel, pandas, or Google Sheets for a full trade-by-trade audit.
+> - For multi-stock runs, examine `trade_ledger.csv` in Excel or pandas for a full trade-by-trade audit.
 
 
 ---
@@ -310,26 +312,27 @@ The trading bot framework is extensively tested via backtesting using LumiBot an
 
 Planned improvements and possible research directions for this trading bot includes:
 
+- **Live & Paper Trading:**  
+  - Further develop logic and monitoring for robust live and paper trading, including real-time data feeds and automated risk controls.
+
 - **API & Dashboard:**  
   Expand the FastAPI integration (as demonstrated in `research/app_demo.py`) to serve predictions and trading analytics as a live REST API.  
-  >- app_demo.py demonstrates how the model and sentiment logic can be exposed as an API endpoint using FastAPI for integration and extensibility.
+  - `app_demo.py` demonstrates how the prediction model and sentiment logic can be exposed as an API endpoint using FastAPI for integration and extensibility.
   Build an interactive dashboard for monitoring trades, sentiment, and strategy performance in real time.
-
-- **Conversational & Autonomous Agents:**  
-  Integrate with frameworks like [LangChain](https://python.langchain.com/) or [LangGraph](https://langchain-ai.github.io/langgraph/) for building intelligent trading assistants or multi-agent pipelines.
 
 - **Scalability & Deployment:**  
   - Containerize the project with Docker for reproducible deployment.
   - Add CI/CD workflows and consider orchestrating with Kubernetes for production use.
-  - Implement distributed backtesting using task queues (Celery, Redis).
-
-- **Live & Paper Trading:**  
-  Further develop logic and monitoring for robust live and paper trading, including real-time data feeds and automated risk controls.
 
 - **Enhanced Strategies:**  
-  - Experiment with advanced ML models (XGBoost, LSTM, Transformers).
+  - Conduct further Experiments with advanced ML models (XGBoost, LSTM, Transformers).
   - Incorporate new features from fundamental or alternative data sources.
   - Test additional risk management techniques and trade automation logic.
+
+- **Conversational & Autonomous Agents:**  
+  - Later, integrate with frameworks like [LangChain](https://python.langchain.com/) or [LangGraph](https://langchain-ai.github.io/langgraph/) for building intelligent trading assistants or multi-agent pipelines.  
+  - This could be used to users to interact with the trading bot via natural language, automate complex decision-making, and coordinate multiple agents (e.g., analyst, strategist, executor) for advanced, autonomous trading workflows.
+
 
 - **Monitoring & Alerts:**  
   Add notifications for significant trading events, risk breaches, or system status updates via email, Slack, or Telegram.
