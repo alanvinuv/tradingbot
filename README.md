@@ -368,7 +368,7 @@ Planned improvements and possible research directions for this trading bot inclu
   [MLTradingBot by NickNochnack](https://github.com/nicknochnack/MLTradingBot)  
   [Dataquest S&P 500 Project](https://github.com/dataquestio/project-walkthroughs/tree/master/sp_500)  
   [Deep Learning Attention Examples by meanxai](https://github.com/meanxai/deep_learning/tree/main/11.Attention)  
-  ...and to the open-source community and contributors who made rapid prototyping and research possible.
+  ...and to the open-source community who made rapid prototyping and research possible.
 
 
 ---
