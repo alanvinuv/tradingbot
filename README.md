@@ -91,7 +91,6 @@ tradingbot/
 ├── requirements.txt            # Python dependencies
 ├── finbert_utils.py            # Sentiment analysis functions
 ├── trading_bot_multistock.py   # Main multi-stock trading script
-├── trade_ledger.csv            # Trade log output 
 ├── trading_bot.py              # single-stock trading script
 └── README.md                   # This file
 ```

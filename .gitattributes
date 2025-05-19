@@ -1,0 +1,5 @@
+# Ignore all HTML files in a folder called 'docs' (or change the folder as needed)
+outputs/*.html linguist-generated=true
+
+# Ignore all HTML files in your repo
+*.html linguist-generated=true
