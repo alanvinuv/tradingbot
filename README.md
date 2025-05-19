@@ -107,7 +107,7 @@ tradingbot/
         - `trade_ledger.csv` – CSV log of all trades executed by the multi-stock bot.
     - `/single_stock/` – Outputs from the Single-Stock trading bot.
         - `tearsheet.html` – Performance tearsheet/report for the single-stock strategy.
-        - `trade_charts.html` – Charts showing trades and portfolio value.
+        - `trades.html` – Charts showing trades and portfolio value.
 - `/research/` – Notebooks and prototype scripts for modeling and experimental analysis.
     - `Prediction_model.ipynb` –  This notebook documents the experimentation and selection process for the price prediction models used in the trading bot. The workflow include:
         - Classification Models: 
@@ -315,9 +315,9 @@ The trading bot framework is extensively tested via backtesting using LumiBot an
 >
 > **How to review backtesting results:**
 >
-> - View performance plots in `trade_charts.html`.
+> - View performance plots in `trades.html`.
 > - Open `tearsheet.html` in your browser for an interactive summary.
-> - For multi-stock bot, examine `trade_ledger.csv` in Excel or pandas for a full trade-by-trade audit.
+> - For multi-stock bot, examine `trade_ledger.csv` in Excel or pandas for a full trade-by-trade audit and `indicators.html` for custom plot.
 
 
 ---
